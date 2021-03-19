@@ -1,6 +1,6 @@
 import React from "react";
 
-const copyright = props => {
+const Copyright = props => {
     const {copyright} = props
     return (
         <div>
@@ -11,4 +11,4 @@ const copyright = props => {
     )
 }
 
-export default copyright
+export default Copyright

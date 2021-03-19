@@ -1,6 +1,6 @@
 import React from "react";
 
-const details = props => {
+const Details = props => {
     const {explanation} = props
     return (
         <div>
@@ -12,4 +12,4 @@ const details = props => {
     )
 }
 
-export default details;
+export default Details;

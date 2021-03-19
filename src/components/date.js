@@ -1,6 +1,6 @@
 import React from "react";
 
-const date = props => {
+const Date = props => {
     const {date} = props
     return (
         <div>
@@ -10,3 +10,5 @@ const date = props => {
         </div>
     )
 }
+
+export default Date
