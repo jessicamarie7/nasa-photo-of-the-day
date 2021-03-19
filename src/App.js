@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import axios from axios
+import axios from 'axios'
 import { BASE_URL } from './constants/index'
 import Date from "./components/date"
 import Title from "./components/title"
@@ -10,13 +10,15 @@ import Details from "./components/details"
 
 
 
-function App(prop) {
+function App() {
   const [data, setData] = useState({})
 
 useEffect(() => {
-  axios.get(`${BASE_URL}/`)  //add api?
+  axios.get(`${BASE_URL}`)
     .then(res => {
+      console.log(res)
       setData(res.data)
+      
     })
     .catch(err => {
       console.log(err)
@@ -27,7 +29,7 @@ useEffect(() => {
     <div className="theApp">
       <Date date = {data.date}/>
       <Title title = {data.title}/>
-      <Picture picture = {data.url}/>
+      <Picture url = {data.url}/>
       <Copyright copyright = {data.copyright}/>
       <Details details = {data.explanation}/>
     </div>
