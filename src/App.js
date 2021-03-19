@@ -7,6 +7,11 @@ import Title from "./components/title"
 import Picture from "./components/picture"
 import Copyright from "./components/copyright"
 import Details from "./components/details"
+import styled from 'styled-components';
+
+const WrapperDiv = styled.div`
+  padding: 
+`;
 
 
 
@@ -26,13 +31,13 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className="theApp">
+    <WrapperDiv>
       <Date date = {data.date}/>
       <Title title = {data.title}/>
       <Picture url = {data.url}/>
       <Copyright copyright = {data.copyright}/>
-      <Details details = {data.explanation}/>
-    </div>
+      <Details explanation = {data.explanation}/>
+    </WrapperDiv>
   );
 }
 
