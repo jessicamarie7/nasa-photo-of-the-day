@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
 import { API_KEY, BASE_URL } from "./constants";
+import Date from "./components/Date";
+import "./App.css";
+import NasaImg from "./components/NasaImg";
 
 function App() {
 
-  const [imageData, setImageData] = useState('')
+  // const [imageData, setImageData] = useState(null)
 
-  useEffect(() => {
-    axios.get(`${BASE_URL}?api_key=${API_KEY}`)
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`${BASE_URL}?api_key=${API_KEY}`)
+  //     .then(res => {
+  //       setImageData(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.error(err)
+  //     })
+  // }, [])
   
   
   return (
@@ -25,8 +27,11 @@ function App() {
         <p>
           <span role="img" aria-label='go!'>🚀</span>as I always do when looking at the stars you loved so much! <span role="img" aria-label='go!'>🚀</span>
         </p>
-        {/* <Date /> */}
+        <Date />
       </header>
+      <div className="todays-image">
+        <NasaImg />
+      </div>
     </div>
   );
 }

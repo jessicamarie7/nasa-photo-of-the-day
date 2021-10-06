@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../constants";
 
 
-export default function Date() {
-    const [theDate, setTheDate] = useState(null)
+export default function NasaImg() {
+    const [theImg, setTheImg] = useState(null)
 
     useEffect(() => {
         axios.get(`${BASE_URL}?api_key=${API_KEY}`)
             .then(res => {
-                setTheDate(res.data.date)
+                setTheImg(res.data.url)
             })
             .catch(err => {
                 console.log(err)
@@ -18,7 +18,7 @@ export default function Date() {
 
     return (
         <div className='container'>
-            <h2>Today's Date: {theDate}</h2>
+            <img src={theImg} />
         </div>
     )
 }
